@@ -259,6 +259,75 @@ body {
   background: #fff;
 }
 
+.goTop {
+  display: none;
+  position: fixed;
+  bottom: 50px;
+  right: 80px;
+  z-index: 9;
+}
+.goTop.active {
+  display: block;
+}
+.goTop button {
+  width: 100px;
+  height: 100px;
+  color: #fff;
+  font-size: 0.8em;
+  font-weight: 700;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  position: relative;
+}
+.goTop button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  transform: scale(0);
+  transition: 0.5s ease;
+  z-index: -1;
+}
+.goTop button span {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-left: 3px solid #fff;
+  border-top: 3px solid #fff;
+  transform: rotate(45deg);
+  margin-bottom: 6px;
+  position: relative;
+}
+.goTop button span:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 3px;
+  width: 2.5px;
+  height: 10px;
+  background: #fff;
+  transform: rotate(-45deg);
+  transform-origin: left;
+}
+.goTop button:hover {
+  color: #000;
+}
+.goTop button:hover:before {
+  transform: scale(1);
+}
+.goTop button:hover span {
+  border-left: 3px solid #000;
+  border-top: 3px solid #000;
+}
+.goTop button:hover span:before {
+  background: #000;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -266,6 +335,10 @@ header {
   width: 100%;
   padding: 0 15px;
   z-index: 20;
+  transition: opacity 1s ease, background 0.6s ease;
+}
+header.black {
+  background: #000;
 }
 header .navigation {
   display: flex;
@@ -374,7 +447,10 @@ header .navigation .menu .btnSub.active span:nth-child(2) {
   opacity: 0;
   transform: translateY(50%);
   overflow: hidden;
-  transition: 1s ease 4s;
+  transition-property: transform, opacity;
+  transition-duration: 1s;
+  transition-timing-function: ease;
+  transition-delay: 4s;
 }
 .sec1.active .mask img {
   transform: scale(1.4);
@@ -387,6 +463,10 @@ header .navigation .menu .btnSub.active span:nth-child(2) {
 .sec1.active h1 {
   opacity: 1;
   transform: translateY(0);
+}
+
+.sec2 {
+  height: 50vh;
 }
 
 @media screen and (max-width: 989px) {

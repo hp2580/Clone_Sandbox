@@ -24,3 +24,8 @@ button {
 .hidden {
   overflow: hidden;
 }
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
+}

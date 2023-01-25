@@ -1,5 +1,7 @@
 const subMenu = document.querySelector(".subMenu");
 const btnFamily = document.querySelector(".btnFamily");
+const btnTop = document.querySelector(".goTop");
+const nav = document.querySelector("header");
 const btnLanguages = document.querySelectorAll(".lang a");
 const btnSub = document.querySelector(".btnSub");
 
@@ -8,6 +10,12 @@ btnFamily.addEventListener("click", () => {
   btnFamily.classList.toggle("active");
   if (btnFamily.classList.contains("active")) optFamily.classList.add("active");
   else optFamily.classList.remove("active");
+});
+
+btnTop.addEventListener("click", (e) => {
+  setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, 300);
 });
 
 btnLanguages.forEach((btnLanguage) => {
