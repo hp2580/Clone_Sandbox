@@ -3,7 +3,7 @@ body {
 }
 
 .mobile {
-  display: none;
+  display: none !important;
 }
 
 .subMenu {
@@ -466,7 +466,107 @@ header .navigation .menu .btnSub.active span:nth-child(2) {
 }
 
 .sec2 {
-  height: 50vh;
+  padding-top: 250px;
+  background: #000;
+}
+.sec2 .title {
+  font-size: 5em;
+  color: #fff;
+  letter-spacing: -2px;
+  text-align: center;
+}
+.sec2 .contentWrap {
+  padding-top: 60px;
+}
+.sec2 .contentWrap .content {
+  position: relative;
+  margin: 0 370px 0 50px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.sec2 .contentWrap .content > * {
+  cursor: pointer;
+}
+.sec2 .contentWrap .content .desc {
+  position: absolute;
+  color: #fff;
+  font-weight: 600;
+}
+.sec2 .contentWrap .content .desc.en {
+  left: -50px;
+  bottom: 0;
+  -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+  transform: scale(-1);
+}
+.sec2 .contentWrap .content .desc.en span {
+  display: inline-block;
+  transition: 0.5s ease;
+}
+.sec2 .contentWrap .content .desc.en span:nth-child(2) {
+  transition-delay: 0.3s;
+}
+.sec2 .contentWrap .content .desc.ko {
+  font-size: 3.5em;
+  letter-spacing: -4px;
+  z-index: 1;
+}
+.sec2 .contentWrap .content .desc.ko span {
+  display: block;
+  position: relative;
+}
+.sec2 .contentWrap .content .desc.ko span:before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: #fff;
+  transition: 0.6s ease;
+}
+.sec2 .contentWrap .content img {
+  display: block;
+}
+.sec2 .contentWrap .content.cont1 .ko {
+  top: 70%;
+  right: -115px;
+}
+.sec2 .contentWrap .content.cont2 .ko {
+  top: -67px;
+  right: 0;
+}
+.sec2 .contentWrap .content.cont3 .en {
+  bottom: auto;
+  top: 0;
+}
+.sec2 .contentWrap .content.cont3 .ko {
+  top: 80%;
+  right: -40px;
+}
+.sec2 .contentWrap .content.cont4 .ko {
+  bottom: -30px;
+  right: 0;
+}
+.sec2 .contentWrap .content.cont5 .ko {
+  top: -67px;
+  right: -25px;
+}
+.sec2 .contentWrap .content.cont6 .en {
+  bottom: auto;
+  top: 0;
+}
+.sec2 .contentWrap .content.cont6 .ko {
+  top: 80%;
+  right: -25px;
+}
+.sec2 .contentWrap .content:hover .en span {
+  opacity: 0;
+  transform: translateX(-25px);
+}
+.sec2 .contentWrap .content:hover .ko span:before {
+  width: 100%;
 }
 
 @media screen and (max-width: 989px) {
