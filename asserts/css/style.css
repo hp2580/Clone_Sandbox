@@ -488,6 +488,14 @@ header .navigation .menu .btnSub.active span:nth-child(2) {
 .sec2 .contentWrap .content > * {
   cursor: pointer;
 }
+.sec2 .contentWrap .content:before {
+  content: attr(data-idx);
+  position: absolute;
+  font-size: 10em;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-50%);
+}
 .sec2 .contentWrap .content .desc {
   position: absolute;
   color: #fff;
@@ -514,6 +522,9 @@ header .navigation .menu .btnSub.active span:nth-child(2) {
 }
 .sec2 .contentWrap .content .desc.ko span {
   display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   position: relative;
 }
 .sec2 .contentWrap .content .desc.ko span:before {
@@ -529,13 +540,26 @@ header .navigation .menu .btnSub.active span:nth-child(2) {
 .sec2 .contentWrap .content img {
   display: block;
 }
+.sec2 .contentWrap .content.cont1:before {
+  top: 50%;
+  right: -100px;
+}
 .sec2 .contentWrap .content.cont1 .ko {
   top: 70%;
   right: -115px;
 }
+.sec2 .contentWrap .content.cont2:before {
+  top: -67px;
+  right: 0;
+}
 .sec2 .contentWrap .content.cont2 .ko {
   top: -67px;
   right: 0;
+}
+.sec2 .contentWrap .content.cont3:before {
+  bottom: 0;
+  left: -150px;
+  transform: translateY(35px);
 }
 .sec2 .contentWrap .content.cont3 .en {
   bottom: auto;
@@ -545,13 +569,27 @@ header .navigation .menu .btnSub.active span:nth-child(2) {
   top: 80%;
   right: -40px;
 }
+.sec2 .contentWrap .content.cont4:before {
+  bottom: -165px;
+  left: 0;
+  transform: translateY(0);
+}
 .sec2 .contentWrap .content.cont4 .ko {
   bottom: -30px;
   right: 0;
 }
+.sec2 .contentWrap .content.cont5:before {
+  top: -75px;
+  left: 0;
+}
 .sec2 .contentWrap .content.cont5 .ko {
   top: -67px;
   right: -25px;
+}
+.sec2 .contentWrap .content.cont6:before {
+  bottom: 0;
+  left: -165px;
+  transform: translateY(35px);
 }
 .sec2 .contentWrap .content.cont6 .en {
   bottom: auto;
