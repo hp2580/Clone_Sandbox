@@ -460,8 +460,10 @@ header {
     text-align: center;
   }
   .contentWrap {
+    display: flex;
     padding-top: 60px;
     .content {
+      flex: 1;
       position: relative;
       margin: 0 370px 0 50px;
       width: fit-content;
