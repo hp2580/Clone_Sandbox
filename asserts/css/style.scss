@@ -453,6 +453,7 @@ header {
 .sec2 {
   padding-top: 250px;
   background: #000;
+  overflow: hidden;
   .title {
     font-size: 5em;
     color: #fff;
@@ -461,11 +462,13 @@ header {
   }
   .contentWrap {
     display: flex;
+    flex-wrap: nowrap;
     padding-top: 60px;
+    overflow: hidden;
     .content {
       flex: 1;
       position: relative;
-      margin: 0 370px 0 50px;
+      margin: 0 320px 0 50px;
       width: fit-content;
       & > * {
         cursor: pointer;
@@ -516,8 +519,21 @@ header {
           }
         }
       }
-      img {
-        display: block;
+      .imgWrap {
+        position: relative;
+        overflow: hidden;
+        span {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 10;
+        }
+        img {
+          display: block;
+          max-width: 604px;
+        }
       }
       &.cont1 {
         &:before {
@@ -528,8 +544,14 @@ header {
           top: 70%;
           right: -115px;
         }
+        .imgWrap {
+          span {
+            background: #ab0c2c;
+          }
+        }
       }
       &.cont2 {
+        align-self: flex-end;
         &:before {
           top: -67px;
           right: 0;
@@ -537,6 +559,11 @@ header {
         .ko {
           top: -67px;
           right: 0;
+        }
+        .imgWrap {
+          span {
+            background: #fccc0a;
+          }
         }
       }
       &.cont3 {
@@ -553,8 +580,14 @@ header {
           top: 80%;
           right: -40px;
         }
+        .imgWrap {
+          span {
+            background: #2e87d3;
+          }
+        }
       }
       &.cont4 {
+        align-self: flex-start;
         &:before {
           bottom: -165px;
           left: 0;
@@ -564,8 +597,14 @@ header {
           bottom: -30px;
           right: 0;
         }
+        .imgWrap {
+          span {
+            background: #ab0c2c;
+          }
+        }
       }
       &.cont5 {
+        align-self: flex-end;
         &:before {
           top: -75px;
           left: 0;
@@ -573,6 +612,11 @@ header {
         .ko {
           top: -67px;
           right: -25px;
+        }
+        .imgWrap {
+          span {
+            background: #fccc0a;
+          }
         }
       }
       &.cont6 {
@@ -588,6 +632,11 @@ header {
         .ko {
           top: 80%;
           right: -25px;
+        }
+        .imgWrap {
+          span {
+            background: #2e87d3;
+          }
         }
       }
       &:hover {

@@ -4,7 +4,7 @@ const btnTop = document.querySelector(".goTop");
 const nav = document.querySelector("header");
 const btnLanguages = document.querySelectorAll(".lang a");
 const btnSub = document.querySelector(".btnSub");
-const contenttWrap = document.querySelector(".sec2 .contentWrap");
+const contentWrap = document.querySelector(".sec2 .contentWrap");
 
 btnFamily.addEventListener("click", () => {
   let optFamily = document.querySelector(".optFamily");

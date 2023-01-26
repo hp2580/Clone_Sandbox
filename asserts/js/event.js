@@ -1,4 +1,5 @@
 let prevY;
+let contWidth = 0;
 
 window.onload = () => {
   prevY = window.scrollY;
