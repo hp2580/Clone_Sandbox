@@ -1,4 +1,5 @@
 gsap.registerPlugin(ScrollTrigger);
+const pc = gsap.matchMedia();
 
 const contents = gsap.utils.toArray(".sec2 .content");
 let scrollTween;
@@ -20,218 +21,219 @@ const tl2 = gsap.timeline({
 });
 let tl3, tl4, tl5, tl6;
 
-gsap.fromTo(
-  ".sec2 .title",
-  {
-    y: 50,
-    opacity: 0,
-  },
-  {
-    y: 0,
-    opacity: 1,
-    duration: 0.3,
-    scrollTrigger: {
-      trigger: ".sec2",
-      start: "top 40%",
-      toggleActions: "play none none reverse",
+pc.add("(min-width: 767px", () => {
+  gsap.fromTo(
+    ".sec2 .title",
+    {
+      y: 50,
+      opacity: 0,
     },
-  }
-);
-
-scrollTween = gsap.to(contents, {
-  x: -974 * (contents.length - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".sec2 .contentWrap",
-    scrub: 1,
-    pin: true,
-    end: () => `+=${(contents.length + 1) * 974}px`,
-  },
-});
-
-sTrigger = {
-  trigger: "",
-  markers: true,
-  start: "left 70%",
-  end: "left 90%",
-  containerAnimation: scrollTween,
-  toggleActions: "play none none reverse",
-};
-
-sTrigger3 = { ...sTrigger };
-sTrigger4 = { ...sTrigger };
-sTrigger5 = { ...sTrigger };
-sTrigger6 = { ...sTrigger };
-
-sTrigger3.trigger = ".cont3";
-sTrigger4.trigger = ".cont4";
-sTrigger5.trigger = ".cont5";
-sTrigger6.trigger = ".cont6";
-
-tl3 = gsap.timeline({
-  scrollTrigger: sTrigger3,
-});
-
-tl4 = gsap.timeline({
-  scrollTrigger: sTrigger4,
-});
-
-tl5 = gsap.timeline({
-  scrollTrigger: sTrigger5,
-});
-
-tl6 = gsap.timeline({
-  scrollTrigger: sTrigger6,
-});
-
-tl1
-  .fromTo(
-    ".cont1 .imgWrap",
-    { y: 300 },
     {
       y: 0,
-      duration: 0.6,
+      opacity: 1,
+      duration: 0.3,
+      scrollTrigger: {
+        trigger: ".sec2",
+        start: "top 40%",
+        toggleActions: "play none none reverse",
+      },
     }
-  )
-  .to(".cont1 .bg", {
-    y: "-110%",
-    duration: 0.5,
-  })
-  .fromTo(
-    ".cont1 img",
-    {
-      scale: 1.3,
-    },
-    {
-      scale: 1,
-      duration: 1,
-    },
-    "-=.6"
   );
 
-tl2
-  .fromTo(
-    ".cont2 .imgWrap",
-    {
-      opacity: 0,
+  scrollTween = gsap.to(contents, {
+    x: -974 * (contents.length - 1),
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".sec2 .contentWrap",
+      scrub: 1,
+      pin: true,
+      end: () => `+=${(contents.length + 1) * 974}px`,
     },
-    {
-      opacity: 1,
-      duration: 0.6,
-    }
-  )
-  .to(".cont2 .bg", {
-    y: "110%",
-    duration: 0.5,
-  })
-  .fromTo(
-    ".cont2 img",
-    {
-      scale: 1.3,
-    },
-    {
-      scale: 1,
-      duration: 1,
-    },
-    "-=.6"
-  );
+  });
 
-tl3
-  .fromTo(
-    ".cont3 .bg",
-    {
-      left: "-100%",
-    },
-    {
-      left: "100%",
-      duration: 1.5,
-    }
-  )
-  .fromTo(
-    ".cont3 img",
-    {
-      opacity: 0,
-      scale: 1.3,
-    },
-    {
-      opacity: 1,
-      scale: 1,
-      duration: 1,
-    },
-    "-=1.3"
-  );
+  sTrigger = {
+    trigger: "",
+    start: "left 70%",
+    end: "left 90%",
+    containerAnimation: scrollTween,
+    toggleActions: "play none none reverse",
+  };
 
-tl4
-  .fromTo(
-    ".cont4 .bg",
-    {
-      top: "100%",
-    },
-    {
-      top: "-100%",
-      duration: 1.5,
-    }
-  )
-  .fromTo(
-    ".cont4 img",
-    {
-      opacity: 0,
-      scale: 1.3,
-    },
-    {
-      opacity: 1,
-      scale: 1,
-      duration: 1,
-    },
-    "-=1"
-  );
+  sTrigger3 = { ...sTrigger };
+  sTrigger4 = { ...sTrigger };
+  sTrigger5 = { ...sTrigger };
+  sTrigger6 = { ...sTrigger };
 
-tl5
-  .fromTo(
-    ".cont5 .bg",
-    {
-      top: "100%",
-    },
-    {
-      top: "-100%",
-      duration: 1.5,
-    }
-  )
-  .fromTo(
-    ".cont5 img",
-    {
-      opacity: 0,
-      scale: 1.3,
-    },
-    {
-      opacity: 1,
-      scale: 1,
-      duration: 1,
-    },
-    "-=1"
-  );
+  sTrigger3.trigger = ".cont3";
+  sTrigger4.trigger = ".cont4";
+  sTrigger5.trigger = ".cont5";
+  sTrigger6.trigger = ".cont6";
 
-tl6
-  .fromTo(
-    ".cont6 .bg",
-    {
-      left: "-100%",
-    },
-    {
-      left: "100%",
-      duration: 1.5,
-    }
-  )
-  .fromTo(
-    ".cont6 img",
-    {
-      opacity: 0,
-      scale: 1.3,
-    },
-    {
-      opacity: 1,
-      scale: 1,
-      duration: 1,
-    },
-    "-=1"
-  );
+  tl3 = gsap.timeline({
+    scrollTrigger: sTrigger3,
+  });
+
+  tl4 = gsap.timeline({
+    scrollTrigger: sTrigger4,
+  });
+
+  tl5 = gsap.timeline({
+    scrollTrigger: sTrigger5,
+  });
+
+  tl6 = gsap.timeline({
+    scrollTrigger: sTrigger6,
+  });
+
+  tl1
+    .fromTo(
+      ".cont1 .imgWrap",
+      { y: 300 },
+      {
+        y: 0,
+        duration: 0.6,
+      }
+    )
+    .to(".cont1 .bg", {
+      y: "-110%",
+      duration: 0.5,
+    })
+    .fromTo(
+      ".cont1 img",
+      {
+        scale: 1.3,
+      },
+      {
+        scale: 1,
+        duration: 1,
+      },
+      "-=.6"
+    );
+
+  tl2
+    .fromTo(
+      ".cont2 .imgWrap",
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 0.6,
+      }
+    )
+    .to(".cont2 .bg", {
+      y: "110%",
+      duration: 0.5,
+    })
+    .fromTo(
+      ".cont2 img",
+      {
+        scale: 1.3,
+      },
+      {
+        scale: 1,
+        duration: 1,
+      },
+      "-=.6"
+    );
+
+  tl3
+    .fromTo(
+      ".cont3 .bg",
+      {
+        left: "-100%",
+      },
+      {
+        left: "100%",
+        duration: 1.5,
+      }
+    )
+    .fromTo(
+      ".cont3 img",
+      {
+        opacity: 0,
+        scale: 1.3,
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+      },
+      "-=1.3"
+    );
+
+  tl4
+    .fromTo(
+      ".cont4 .bg",
+      {
+        top: "100%",
+      },
+      {
+        top: "-100%",
+        duration: 1.5,
+      }
+    )
+    .fromTo(
+      ".cont4 img",
+      {
+        opacity: 0,
+        scale: 1.3,
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+      },
+      "-=1"
+    );
+
+  tl5
+    .fromTo(
+      ".cont5 .bg",
+      {
+        top: "100%",
+      },
+      {
+        top: "-100%",
+        duration: 1.5,
+      }
+    )
+    .fromTo(
+      ".cont5 img",
+      {
+        opacity: 0,
+        scale: 1.3,
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+      },
+      "-=1"
+    );
+
+  tl6
+    .fromTo(
+      ".cont6 .bg",
+      {
+        left: "-100%",
+      },
+      {
+        left: "100%",
+        duration: 1.5,
+      }
+    )
+    .fromTo(
+      ".cont6 img",
+      {
+        opacity: 0,
+        scale: 1.3,
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+      },
+      "-=1"
+    );
+});
