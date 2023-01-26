@@ -5,6 +5,8 @@ const nav = document.querySelector("header");
 const btnLanguages = document.querySelectorAll(".lang a");
 const btnSub = document.querySelector(".btnSub");
 const contentWrap = document.querySelector(".sec2 .contentWrap");
+const contentTitle = document.querySelector(".sec2 .title");
+const descriptions = document.querySelectorAll(".sec2 .desc");
 
 btnFamily.addEventListener("click", () => {
   let optFamily = document.querySelector(".optFamily");

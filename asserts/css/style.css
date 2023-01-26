@@ -761,9 +761,17 @@ header .navigation .menu .btnSub.active span:nth-child(2) {
   .sec2 {
     padding-top: 170px;
   }
-  .sec2 .title {
+  .sec2 .titleWrap {
+    overflow: hidden;
+  }
+  .sec2 .titleWrap .title {
     font-size: 2.75em;
     letter-spacing: 0;
+    transform: translateY(50px);
+    transition: 0.6s ease;
+  }
+  .sec2 .titleWrap .title.active {
+    transform: translateY(0);
   }
   .sec2 .contentWrap {
     flex-direction: column;
@@ -791,9 +799,22 @@ header .navigation .menu .btnSub.active span:nth-child(2) {
     left: auto;
     bottom: auto;
   }
+  .sec2 .contentWrap .content .desc.en span {
+    opacity: 0;
+  }
+  .sec2 .contentWrap .content .desc.en.active span {
+    opacity: 1;
+  }
   .sec2 .contentWrap .content .desc.ko {
     font-size: calc(1em + 3vw);
     letter-spacing: -2px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.3s;
+  }
+  .sec2 .contentWrap .content .desc.ko.active {
+    opacity: 1;
+    transform: translateY(0);
   }
   .sec2 .contentWrap .content .desc.ko span:before {
     bottom: -1px;

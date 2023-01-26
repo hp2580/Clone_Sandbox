@@ -27,4 +27,24 @@ window.onscroll = () => {
     nav.classList.remove("hide");
     if (top <= 200) nav.classList.remove("black");
   }
+
+  /**
+   * Scroll event for sec2 title, descriptions
+   */
+  if (contentTitle.getBoundingClientRect().top < window.innerHeight * 0.7) {
+    if (!contentTitle.classList.contains("active"))
+      contentTitle.classList.add("active");
+  } else {
+    if (contentTitle.classList.contains("active"))
+      contentTitle.classList.remove("active");
+  }
+  descriptions.forEach((desc) => {
+    let top = desc.getBoundingClientRect().top;
+    if (top < window.innerHeight * 0.85) {
+      if (!desc.classList.contains("active")) desc.classList.add("active");
+    }
+    if (top > window.innerHeight * 0.7) {
+      if (desc.classList.contains("active")) desc.classList.remove("active");
+    }
+  });
 };
