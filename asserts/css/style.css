@@ -396,6 +396,18 @@ header .navigation .menu .btnSub.active span:nth-child(2) {
   transform: translateY(6px) rotate(-45deg);
 }
 
+section:not(.sec1) {
+  padding-top: 250px;
+  background: #000;
+  overflow: hidden;
+}
+section:not(.sec1) .titleWrap .title {
+  font-size: 4em;
+  color: #fff;
+  letter-spacing: -2px;
+  text-align: center;
+}
+
 .sec1 {
   position: relative;
   height: 100vh;
@@ -465,17 +477,6 @@ header .navigation .menu .btnSub.active span:nth-child(2) {
   transform: translateY(0);
 }
 
-.sec2 {
-  padding-top: 250px;
-  background: #000;
-  overflow: hidden;
-}
-.sec2 .title {
-  font-size: 5em;
-  color: #fff;
-  letter-spacing: -2px;
-  text-align: center;
-}
 .sec2 .contentWrap {
   display: flex;
   flex-wrap: nowrap;
@@ -652,16 +653,6 @@ header .navigation .menu .btnSub.active span:nth-child(2) {
   width: 100%;
 }
 
-.sec3 {
-  background: #000;
-  overflow: hidden;
-}
-.sec3 .titleWrap .title {
-  font-size: 4em;
-  color: #fff;
-  letter-spacing: -2px;
-  text-align: center;
-}
 .sec3 .contentWrap {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -685,7 +676,7 @@ header .navigation .menu .btnSub.active span:nth-child(2) {
   opacity: 0;
   visibility: hidden;
   z-index: 1;
-  transition: opacity 0.6s ease, transform 0.15s linear;
+  transition: opacity 0.6s ease;
 }
 .sec3 .contentWrap .content .descWrap span {
   position: relative;
@@ -812,18 +803,20 @@ header .navigation .menu .btnSub.active span:nth-child(2) {
   transform: rotate(-90deg);
 }
 
-.sec4 {
-  padding-top: 250px;
-}
-
 @media screen and (max-width: 989px) {
   header .navigation {
     height: 70px;
+  }
+  section:not(.sec1) {
+    padding-top: 170px;
   }
   .sec1 h1 {
     left: 50px;
     bottom: 50px;
     font-size: 3em;
+  }
+  .sec3 .contentWrap .content .descWrap {
+    font-size: 2.5em;
   }
 }
 @media screen and (max-width: 767px) {
@@ -917,25 +910,26 @@ header .navigation .menu .btnSub.active span:nth-child(2) {
   header .navigation .menu .btnSub.active span:nth-child(2) {
     transform: translateY(5px) rotate(-45deg);
   }
-  .sec1 h1 {
-    left: 20px;
-    bottom: 100px;
-    font-size: 1.875em;
+  section:not(.sec1) {
+    padding-top: 110px;
   }
-  .sec2 {
-    padding-top: 170px;
-  }
-  .sec2 .titleWrap {
+  section:not(.sec1) .titleWrap {
     overflow: hidden;
+    padding: 0 20px;
   }
-  .sec2 .titleWrap .title {
+  section:not(.sec1) .titleWrap .title {
     font-size: 2.75em;
     letter-spacing: 0;
     transform: translateY(50px);
     transition: 0.6s ease;
   }
-  .sec2 .titleWrap .title.active {
+  section:not(.sec1) .titleWrap .title.active {
     transform: translateY(0);
+  }
+  .sec1 h1 {
+    left: 20px;
+    bottom: 100px;
+    font-size: 1.875em;
   }
   .sec2 .contentWrap {
     flex-direction: column;
@@ -1107,5 +1101,56 @@ header .navigation .menu .btnSub.active span:nth-child(2) {
   .sec2 .contentWrap .content:hover .en span {
     opacity: unset;
     transform: unset;
+  }
+  .sec3 .contentWrap {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 100px 20px 0 20px;
+  }
+  .sec3 .contentWrap .content {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .sec3 .contentWrap .content .descWrap {
+    position: static;
+    font-size: 1em;
+    opacity: 1;
+    visibility: visible;
+    transition: unset;
+    padding-top: 10px;
+  }
+  .sec3 .contentWrap .content .imgWrap {
+    max-height: 260px;
+    overflow: hidden;
+  }
+  .sec3 .contentWrap .content .imgWrap img {
+    transform: translateY(-10%);
+  }
+  .sec3 .contentWrap .content:hover .descWrap span:before {
+    width: 0;
+  }
+  .sec3 .btnWrap {
+    padding: 70px 0;
+  }
+  .sec3 .btnWrap .btnMore {
+    width: 80px;
+    height: 80px;
+  }
+  .sec3 .linkWrap a > span span {
+    font-size: 0.85em;
+    letter-spacing: 0;
+  }
+  .sec3 .linkWrap a img {
+    margin: 0 3px;
+    width: 10px;
+  }
+  .sec3 .linkWrap a:hover:before {
+    transform: scaleX(0);
+  }
+  .sec3 .linkWrap a:hover > span {
+    transform: translateY(-50%);
+  }
+  .sec3 .linkWrap a:hover img {
+    transform: rotate(-90deg);
   }
 }/*# sourceMappingURL=style.css.map */

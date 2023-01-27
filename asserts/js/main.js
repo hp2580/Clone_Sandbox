@@ -4,8 +4,8 @@ const subMenu = document.querySelector(".subMenu"),
   nav = document.querySelector("header"),
   btnLanguages = document.querySelectorAll(".lang a"),
   btnSub = document.querySelector(".btnSub"),
+  titles = document.querySelectorAll(".title"),
   contentWrap = document.querySelector(".sec2 .contentWrap"),
-  contentTitle = document.querySelector(".sec2 .title"),
   descriptions = document.querySelectorAll(".sec2 .desc"),
   creators = document.querySelectorAll(".sec3 .content"),
   descCreators = document.querySelector(".sec3 .descWrap"),
@@ -48,17 +48,19 @@ btnSub.addEventListener("click", () => {
 creators.forEach((creator) => {
   let desc = creator.firstElementChild;
   creator.addEventListener("mousemove", (e) => {
-    let cTop = e.pageY - creator.offsetTop - desc.offsetHeight / 2,
-      cLeft = e.pageX - creator.offsetLeft - desc.offsetWidth / 2,
-      minTop = -desc.offsetHeight / 2,
-      maxTop = creator.offsetHeight - desc.offsetHeight / 2,
-      minLeft = -desc.offsetWidth / 2,
-      maxLeft = creator.offsetWidth - desc.offsetWidth / 2;
-    cTop = cTop < minTop ? minTop : cTop;
-    cTop = cTop > maxTop ? maxTop : cTop;
-    cLeft = cLeft < minLeft ? minLeft : cLeft;
-    cLeft = cLeft > maxLeft ? maxLeft : cLeft;
-    desc.style.transform = `translate3d(${cLeft}px,${cTop}px,0)`;
+    if (window.innerWidth > 767) {
+      let cTop = e.pageY - creator.offsetTop - desc.offsetHeight / 2,
+        cLeft = e.pageX - creator.offsetLeft - desc.offsetWidth / 2,
+        minTop = -desc.offsetHeight / 2,
+        maxTop = creator.offsetHeight - desc.offsetHeight / 2,
+        minLeft = -desc.offsetWidth / 2,
+        maxLeft = creator.offsetWidth - desc.offsetWidth / 2;
+      cTop = cTop < minTop ? minTop : cTop;
+      cTop = cTop > maxTop ? maxTop : cTop;
+      cLeft = cLeft < minLeft ? minLeft : cLeft;
+      cLeft = cLeft > maxLeft ? maxLeft : cLeft;
+      desc.style.transform = `translate3d(${cLeft}px,${cTop}px,0)`;
+    }
   });
 });
 
