@@ -9,8 +9,9 @@ const subMenu = document.querySelector(".subMenu"),
   descriptions = document.querySelectorAll(".sec2 .desc"),
   creators = document.querySelectorAll(".sec3 .content"),
   descCreators = document.querySelector(".sec3 .descWrap"),
-  hiddenCreators = document.querySelectorAll(".sec3 .content.more");
-btnMore = document.querySelector(".sec3 .btnMore");
+  hiddenCreators = document.querySelectorAll(".sec3 .content.more"),
+  btnMore = document.querySelector(".sec3 .btnMore"),
+  trailers = document.querySelectorAll(".sec4 .descWrap");
 
 btnFamily.addEventListener("click", () => {
   let optFamily = document.querySelector(".optFamily");
@@ -76,3 +77,28 @@ btnMore.addEventListener("click", () => {
     actHidden2();
   });
 });
+
+trailers.forEach((trailer) => {
+  trailer.addEventListener("mouseenter", () => {
+    if (window.innerWidth > 767) {
+      clearActive(document.querySelectorAll(".sec4 .content"));
+      trailer.parentElement.classList.add("active");
+    }
+  });
+  trailer.addEventListener("click", (e) => {
+    let cont = trailer.parentElement;
+    e.preventDefault();
+    if (!cont.classList.contains("active")) {
+      clearActive(document.querySelectorAll(".sec4 .content"));
+      cont.classList.add("active");
+    } else {
+      clearActive(document.querySelectorAll(".sec4 .content"));
+    }
+  });
+});
+
+function clearActive(objs) {
+  objs.forEach((obj) => {
+    obj.classList.remove("active");
+  });
+}

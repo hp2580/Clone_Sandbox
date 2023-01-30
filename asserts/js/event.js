@@ -1,10 +1,13 @@
 let prevY;
 let contWidth = 0;
 let wWidth = 0;
+let isLoadingEnd = false;
 
 window.onload = () => {
-  prevY = window.scrollY;
-  document.querySelector(".sec1").classList.add("active");
+  setTimeout(() => {
+    prevY = window.scrollY;
+    document.querySelector(".sec1").classList.add("active");
+  });
 };
 
 window.onresize = () => {
@@ -13,6 +16,7 @@ window.onresize = () => {
     document.querySelectorAll(".sec3 .descWrap").forEach((desc) => {
       desc.style.transform = `translate3d(0,0,0)`;
     });
+    clearActive(document.querySelectorAll(".sec4 .content"));
   }
 };
 

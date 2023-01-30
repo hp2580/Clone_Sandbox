@@ -66,7 +66,6 @@ let actHidden2 = () => {
         ...commonTrigger,
         trigger: hidden,
         start: "top 60%",
-        markers: true,
       },
     });
     hiddenTL
@@ -154,7 +153,6 @@ media.add("(max-width: 767px)", () => {
         ...commonTrigger,
         trigger: show,
         start: "top 60%",
-        markers: true,
       },
     });
     showTL
