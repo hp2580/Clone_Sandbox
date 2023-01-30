@@ -63,10 +63,3 @@ creators.forEach((creator) => {
     }
   });
 });
-
-btnMore.addEventListener("click", () => {
-  btnMore.style.display = "none";
-  hiddenCreators.forEach((creator) => {
-    creator.classList.remove("more");
-  });
-});
