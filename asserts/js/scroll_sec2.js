@@ -1,5 +1,5 @@
 gsap.registerPlugin(ScrollTrigger);
-const pc = gsap.matchMedia();
+const media = gsap.matchMedia();
 
 const contents = gsap.utils.toArray(".sec2 .content");
 let scrollTween;
@@ -21,7 +21,7 @@ const tl2 = gsap.timeline({
 });
 let tl3, tl4, tl5, tl6;
 
-pc.add("(min-width: 767px", () => {
+media.add("(min-width: 767px", () => {
   gsap.fromTo(
     ".sec2 .title",
     {

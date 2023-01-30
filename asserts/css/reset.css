@@ -29,8 +29,3 @@ button {
   opacity: 0;
   visibility: hidden;
 }
-
-.sec1,
-.sec2 {
-  display: none;
-}

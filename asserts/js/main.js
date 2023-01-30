@@ -63,3 +63,16 @@ creators.forEach((creator) => {
     }
   });
 });
+
+btnMore.addEventListener("click", () => {
+  btnMore.parentElement.style.display = "none";
+  hiddenCreators.forEach((creator) => {
+    creator.style.display = "flex";
+  });
+  media.add("(min-width: 768px)", () => {
+    actHidden();
+  });
+  media.add("(max-width: 767px)", () => {
+    actHidden2();
+  });
+});
