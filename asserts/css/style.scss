@@ -861,9 +861,16 @@ section:not(.sec1) {
     @include flexCenter;
     flex-direction: column;
     align-items: flex-end;
-    margin: 100px 20px;
+    margin: 100px 60px;
     color: #fff;
     position: relative;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: 0.6s;
+    &.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
     .content {
       width: 40%;
       margin-left: 20px;
@@ -977,6 +984,7 @@ section:not(.sec1) {
 
   .sec4 {
     .contentWrap {
+      margin: 100px 20px;
       .content {
         .descWrap {
           font-size: 0.75em;
@@ -1368,6 +1376,7 @@ section:not(.sec1) {
 
   .sec4 {
     .contentWrap {
+      margin: 100px 20px 30px 20px;
       align-items: flex-start;
       .content {
         @include flexCenter;
@@ -1385,17 +1394,18 @@ section:not(.sec1) {
           }
         }
         .videoWrap {
-          display: none;
           position: static;
           width: 100%;
           aspect-ratio: 16 / 10;
-          opacity: 1;
-          // transition: 0.5s;
+          height: 0;
+          iframe {
+            opacity: 0.3;
+          }
         }
         .descWrap {
           width: 100%;
           padding: 0 0 10px 0;
-          transition: 1s;
+          transition: unset;
           position: relative;
           border: 0;
           .idx {
@@ -1427,7 +1437,10 @@ section:not(.sec1) {
             transform: rotate(225deg);
           }
           .videoWrap {
-            display: block;
+            height: auto;
+            iframe {
+              opacity: 1;
+            }
           }
           .descWrap {
             border-bottom: 0;

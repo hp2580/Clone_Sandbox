@@ -5,6 +5,7 @@ let isLoadingEnd = false;
 
 window.onload = () => {
   setTimeout(() => {
+    wWidth = window.innerWidth;
     prevY = window.scrollY;
     document.querySelector(".sec1").classList.add("active");
   });
@@ -65,4 +66,12 @@ window.onscroll = () => {
       if (desc.classList.contains("active")) desc.classList.remove("active");
     }
   });
+
+  /**
+   * Scroll evnet for Original
+   */
+  let original = document.querySelector(".sec4 .contentWrap"),
+    originalTop = original.getBoundingClientRect().top;
+  if (originalTop < window.innerHeight * 0.8) original.classList.add("active");
+  else original.classList.remove("active");
 };

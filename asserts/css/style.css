@@ -828,9 +828,16 @@ section:not(.sec1) .linkWrap a:hover img {
   align-items: center;
   flex-direction: column;
   align-items: flex-end;
-  margin: 100px 20px;
+  margin: 100px 60px;
   color: #fff;
   position: relative;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 0.6s;
+}
+.sec4 .contentWrap.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 .sec4 .contentWrap .content {
   width: 40%;
@@ -917,6 +924,9 @@ section:not(.sec1) .linkWrap a:hover img {
   }
   .sec3 .contentWrap .content .descWrap {
     font-size: 2.5em;
+  }
+  .sec4 .contentWrap {
+    margin: 100px 20px;
   }
   .sec4 .contentWrap .content .descWrap {
     font-size: 0.75em;
@@ -1249,6 +1259,7 @@ section:not(.sec1) .linkWrap a:hover img {
     width: 10px;
   }
   .sec4 .contentWrap {
+    margin: 100px 20px 30px 20px;
     align-items: flex-start;
   }
   .sec4 .contentWrap .content {
@@ -1270,16 +1281,18 @@ section:not(.sec1) .linkWrap a:hover img {
     border-top: 0;
   }
   .sec4 .contentWrap .content .videoWrap {
-    display: none;
     position: static;
     width: 100%;
     aspect-ratio: 16/10;
-    opacity: 1;
+    height: 0;
+  }
+  .sec4 .contentWrap .content .videoWrap iframe {
+    opacity: 0.3;
   }
   .sec4 .contentWrap .content .descWrap {
     width: 100%;
     padding: 0 0 10px 0;
-    transition: 1s;
+    transition: unset;
     position: relative;
     border: 0;
   }
@@ -1310,7 +1323,10 @@ section:not(.sec1) .linkWrap a:hover img {
     transform: rotate(225deg);
   }
   .sec4 .contentWrap .content.active .videoWrap {
-    display: block;
+    height: auto;
+  }
+  .sec4 .contentWrap .content.active .videoWrap iframe {
+    opacity: 1;
   }
   .sec4 .contentWrap .content.active .descWrap {
     border-bottom: 0;
