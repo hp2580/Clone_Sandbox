@@ -1,5 +1,5 @@
 const subMenu = document.querySelector(".subMenu"),
-  btnFamily = document.querySelector(".btnFamily"),
+  btnFamily = document.querySelector(".subMenu .btnFamily"),
   btnTop = document.querySelector(".goTop"),
   nav = document.querySelector("header"),
   btnLanguages = document.querySelectorAll(".lang a"),
@@ -11,7 +11,8 @@ const subMenu = document.querySelector(".subMenu"),
   descCreators = document.querySelector(".sec3 .descWrap"),
   hiddenCreators = document.querySelectorAll(".sec3 .content.more"),
   btnMore = document.querySelector(".sec3 .btnMore"),
-  trailers = document.querySelectorAll(".sec4 .descWrap");
+  trailers = document.querySelectorAll(".sec4 .descWrap"),
+  btnFamily_f = document.querySelector("footer .btnFamily");
 
 btnFamily.addEventListener("click", () => {
   let optFamily = document.querySelector(".optFamily");
@@ -95,6 +96,10 @@ trailers.forEach((trailer) => {
       clearActive(document.querySelectorAll(".sec4 .content"));
     }
   });
+});
+
+btnFamily_f.addEventListener("click", () => {
+  btnFamily_f.classList.toggle("active");
 });
 
 function clearActive(objs) {

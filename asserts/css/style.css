@@ -910,6 +910,204 @@ section:not(.sec1) .linkWrap a:hover img {
   filter: opacity(1);
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0 80px;
+  color: rgba(255, 255, 255, 0.8);
+  background: #000;
+  padding: 100px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+footer .footer1 {
+  max-width: 360px;
+  font-size: 0.9em;
+}
+footer .footer1 > * {
+  margin-bottom: 10px;
+}
+footer .footer1 a {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+footer .footer1 a:before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: #fff;
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  transition: transform 0.5s ease;
+}
+footer .footer1 a .arrow {
+  width: 10px;
+  height: 10px;
+  overflow: hidden;
+  margin-left: 10px;
+  position: relative;
+}
+footer .footer1 a .arrow span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/trailer/main_arrow.png) no-repeat center/cover;
+  filter: opacity(0.7);
+  transition: 0.5s ease;
+}
+footer .footer1 a .arrow span:nth-child(2) {
+  transform: translate(-130%, 130%);
+}
+footer .footer1 a:hover:before {
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+footer .footer1 a:hover .arrow span {
+  transform: translate(130%, -130%);
+}
+footer .footer1 a:hover .arrow span:nth-child(2) {
+  transform: translate(0, 0);
+}
+footer .footer1 p {
+  font-weight: 600;
+  letter-spacing: -2px;
+}
+footer .footer1 .copyright {
+  font-weight: normal;
+  letter-spacing: 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+footer .footer2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+  gap: 0 50px;
+}
+footer .footer2 .left,
+footer .footer2 .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px 0;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+footer .footer2 .left a {
+  position: relative;
+}
+footer .footer2 .left a:before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.5s ease;
+}
+footer .footer2 .left a:hover:before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+footer .footer2 .right a {
+  display: flex;
+  align-items: center;
+}
+footer .footer2 .right a .arrow {
+  width: 7px;
+  height: 7px;
+  margin-left: 10px;
+  position: relative;
+  overflow: hidden;
+}
+footer .footer2 .right a .arrow span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/trailer/main_arrow.png) no-repeat center/cover;
+  filter: opacity(0.7);
+  transition: 0.5s ease;
+}
+footer .footer2 .right a .arrow span:nth-child(2) {
+  transform: translate(-130%, 130%);
+}
+footer .footer2 .right a:hover .arrow span {
+  transform: translate(130%, -130%);
+}
+footer .footer2 .right a:hover .arrow span:nth-child(2) {
+  transform: translate(0, 0);
+}
+footer .familyWrap {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+}
+footer .familyWrap .btnFamily {
+  width: 180px;
+  padding: 15px 20px;
+  border: 1px solid #fff;
+  text-align: left;
+  font-weight: 600;
+  color: #fff;
+  position: relative;
+}
+footer .familyWrap .btnFamily:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  width: 7px;
+  height: 7px;
+  border-right: 1px solid rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  transform: translateY(-50%) rotate(45deg);
+  transition: 0.5s;
+}
+footer .familyWrap .btnFamily .subSites {
+  position: absolute;
+  bottom: -140px;
+  left: 0;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  z-index: 1;
+  background: #000;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.4s;
+}
+footer .familyWrap .btnFamily .subSites a {
+  display: block;
+  padding: 15px 20px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.3);
+  transition: 0.3s;
+}
+footer .familyWrap .btnFamily .subSites a:hover {
+  color: #000;
+  background: #fff;
+}
+footer .familyWrap .btnFamily.active:before {
+  transform: translateY(-50%) rotate(225deg);
+}
+footer .familyWrap .btnFamily.active .subSites {
+  transform: scaleY(1);
+}
+
 @media screen and (max-width: 989px) {
   header .navigation {
     height: 70px;
@@ -930,6 +1128,50 @@ section:not(.sec1) .linkWrap a:hover img {
   }
   .sec4 .contentWrap .content .descWrap {
     font-size: 0.75em;
+  }
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px 0;
+    padding: 100px 40px;
+    border-top: 0;
+  }
+  footer .footer1 {
+    max-width: none;
+  }
+  footer .footer1 > * {
+    margin-bottom: 20px;
+  }
+  footer .footer1 p {
+    font-weight: 600;
+    letter-spacing: -2px;
+  }
+  footer .footer1 .copyright {
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  footer .familyWrap {
+    top: 0;
+    right: auto;
+    left: 0;
+    width: 100%;
+  }
+  footer .familyWrap .btnFamily {
+    width: 100%;
+    padding: 15px 40px;
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  footer .familyWrap .btnFamily .subSites {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  footer .familyWrap .btnFamily .subSites a {
+    padding: 15px 40px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1330,5 +1572,14 @@ section:not(.sec1) .linkWrap a:hover img {
   }
   .sec4 .contentWrap .content.active .descWrap {
     border-bottom: 0;
+  }
+  footer .footer1 {
+    font-size: 0.7em;
+  }
+  footer .footer1 p {
+    font-size: 1.1em;
+  }
+  footer .footer2 {
+    font-size: 0.8em;
   }
 }/*# sourceMappingURL=style.css.map */

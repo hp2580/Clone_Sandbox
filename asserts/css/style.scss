@@ -953,6 +953,214 @@ section:not(.sec1) {
   }
 }
 
+footer {
+  @include flexCenter;
+  justify-content: flex-start;
+  gap: 0 80px;
+  color: rgba(#fff, 0.8);
+  background: #000;
+  padding: 100px 20px;
+  border-top: 1px solid rgba(#fff, 0.3);
+  position: relative;
+  .footer1 {
+    max-width: 360px;
+    font-size: 0.9em;
+    & > * {
+      margin-bottom: 10px;
+    }
+    a {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 1.5px;
+        background: #fff;
+        transform: scaleX(1);
+        transform-origin: bottom left;
+        transition: transform 0.5s ease;
+      }
+      .arrow {
+        width: 10px;
+        height: 10px;
+        overflow: hidden;
+        margin-left: 10px;
+        position: relative;
+        span {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: url(../images/trailer/main_arrow.png) no-repeat center /
+            cover;
+          filter: opacity(0.7);
+          transition: 0.5s ease;
+          &:nth-child(2) {
+            transform: translate(-130%, 130%);
+          }
+        }
+      }
+      &:hover {
+        &:before {
+          transform: scaleX(0);
+          transform-origin: bottom right;
+        }
+        .arrow {
+          span {
+            transform: translate(130%, -130%);
+            &:nth-child(2) {
+              transform: translate(0, 0);
+            }
+          }
+        }
+      }
+    }
+    p {
+      font-weight: 600;
+      letter-spacing: -2px;
+    }
+    .copyright {
+      font-weight: normal;
+      letter-spacing: 0;
+      color: rgba(#fff, 0.5);
+    }
+  }
+  .footer2 {
+    @include flexCenter;
+    align-items: flex-start;
+    gap: 0 50px;
+    .left,
+    .right {
+      @include flexCenter;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px 0;
+      font-size: 0.85em;
+      font-weight: 600;
+    }
+    .left {
+      a {
+        position: relative;
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: -4px;
+          left: 0;
+          width: 100%;
+          height: 1.5px;
+          background: #fff;
+          transform: scaleX(0);
+          transform-origin: bottom right;
+          transition: transform 0.5s ease;
+        }
+        &:hover:before {
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+      }
+    }
+    .right {
+      a {
+        display: flex;
+        align-items: center;
+        .arrow {
+          width: 7px;
+          height: 7px;
+          margin-left: 10px;
+          position: relative;
+          overflow: hidden;
+          span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(../images/trailer/main_arrow.png) no-repeat center /
+              cover;
+            filter: opacity(0.7);
+            transition: 0.5s ease;
+            &:nth-child(2) {
+              transform: translate(-130%, 130%);
+            }
+          }
+        }
+        &:hover {
+          .arrow {
+            span {
+              transform: translate(130%, -130%);
+              &:nth-child(2) {
+                transform: translate(0, 0);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .familyWrap {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    .btnFamily {
+      width: 180px;
+      padding: 15px 20px;
+      border: 1px solid #fff;
+      text-align: left;
+      font-weight: 600;
+      color: #fff;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        width: 7px;
+        height: 7px;
+        border-right: 1px solid rgba(#fff, 0.7);
+        border-bottom: 1px solid rgba(#fff, 0.7);
+        transform: translateY(-50%) rotate(45deg);
+        transition: 0.5s;
+      }
+      .subSites {
+        position: absolute;
+        bottom: -140px;
+        left: 0;
+        width: 100%;
+        border: 1px solid rgba(#fff, 0.8);
+        z-index: 1;
+        background: #000;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: 0.4s;
+        a {
+          display: block;
+          padding: 15px 20px;
+          font-weight: 600;
+          color: rgba(#fff, 0.3);
+          transition: 0.3s;
+          &:hover {
+            color: #000;
+            background: #fff;
+          }
+        }
+      }
+      &.active {
+        &:before {
+          transform: translateY(-50%) rotate(225deg);
+        }
+        .subSites {
+          transform: scaleY(1);
+        }
+      }
+    }
+  }
+}
+
 @include tablet {
   header {
     .navigation {
@@ -988,6 +1196,51 @@ section:not(.sec1) {
       .content {
         .descWrap {
           font-size: 0.75em;
+        }
+      }
+    }
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px 0;
+    padding: 100px 40px;
+    border-top: 0;
+    .footer1 {
+      max-width: none;
+      & > * {
+        margin-bottom: 20px;
+      }
+      p {
+        font-weight: 600;
+        letter-spacing: -2px;
+      }
+      .copyright {
+        position: absolute;
+        bottom: 0;
+        left: 40px;
+        font-size: 1.1em;
+        font-weight: 600;
+        margin-bottom: 30px;
+      }
+    }
+    .familyWrap {
+      top: 0;
+      right: auto;
+      left: 0;
+      width: 100%;
+      .btnFamily {
+        width: 100%;
+        padding: 15px 40px;
+        border: 0;
+        border-top: 1px solid rgba(#fff, 0.3);
+        border-bottom: 1px solid rgba(#fff, 0.3);
+        .subSites {
+          border: 1px solid rgba(#fff, 0.3);
+          a {
+            padding: 15px 40px;
+          }
         }
       }
     }
@@ -1447,6 +1700,18 @@ section:not(.sec1) {
           }
         }
       }
+    }
+  }
+
+  footer {
+    .footer1 {
+      font-size: 0.7em;
+      p {
+        font-size: 1.1em;
+      }
+    }
+    .footer2 {
+      font-size: 0.8em;
     }
   }
 }
