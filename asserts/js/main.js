@@ -69,7 +69,7 @@ creators.forEach((creator) => {
 btnMore.addEventListener("click", () => {
   btnMore.parentElement.style.display = "none";
   hiddenCreators.forEach((creator) => {
-    creator.style.display = "block";
+    creator.style.display = "flex";
   });
   media.add("(min-width: 768px)", () => {
     actHidden();
